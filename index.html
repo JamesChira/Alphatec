@@ -1,631 +1,247 @@
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
+<meta charset="utf-8">
+<title>Alphatec Refrigeration & Air Conditioning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <!--- Basic Page Needs
-   ================================================== -->
-   <meta charset="utf-8">
-	<title>Alphatec Refrigeration & Air Conditioning</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-   <!-- Mobile Specific Metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-	<!-- CSS
-    ================================================== -->
-   <link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/layout.css">
-   <link rel="stylesheet" href="css/media-queries.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-   <!-- Script
-   ================================================== -->
-	<script src="js/modernizr.js"></script>
+<style>
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
 
-   <!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="favicon.png" >
+/* Navbar */
+#nav-wrap {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+#nav {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+#nav li {
+  margin: 0 15px;
+}
+#nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+}
+#nav a:hover, #nav .current a {
+  color: #0078ff;
+}
 
+/* Hero Section */
+header#home {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/portfolio/photo1.jpeg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+header h3 {
+  font-weight: 400;
+  max-width: 700px;
+  margin: 10px auto;
+}
+.social {
+  margin-top: 20px;
+}
+.social li {
+  display: inline-block;
+  margin: 0 8px;
+}
+.social a {
+  color: white;
+  font-size: 1.3rem;
+  transition: transform 0.3s, color 0.3s;
+}
+.social a:hover {
+  transform: scale(1.2);
+  color: #00cfff;
+}
+
+/* Sections */
+section {
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Portfolio */
+#portfolio-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.portfolio-item img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.4s;
+}
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Testimonials */
+#testimonials blockquote {
+  font-style: italic;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Contact */
+#contact input, #contact textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+#contact button {
+  padding: 12px 25px;
+  background: #0078ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#contact button:hover {
+  background: #005fcc;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+}
+footer a {
+  color: #00cfff;
+  text-decoration: none;
+}
+footer .social-links i {
+  margin: 0 5px;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h2 { font-size: 2rem; }
+}
+</style>
 </head>
-
 <body>
 
-   <!-- Header
-   ================================================== -->
-   <header id="home">
-
-      <nav id="nav-wrap">
-
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-
-         <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-            <li><a class="smoothscroll" href="#about">About Us</a></li>
-	         <li><a class="smoothscroll" href="#resume">Company Profile</a></li>
-            <li><a class="smoothscroll" href="#portfolio">Testimonials</a></li>
-            <li><a class="smoothscroll" href="#testimonials">Our Clients</a></li>
-            <li><a class="smoothscroll" href="#contact">Contact</a></li>
-         </ul> <!-- end #nav -->
-
-      </nav> <!-- end #nav-wrap -->
-
-      <div class="row banner">
-         <div class="banner-text">
-            <h2 class="responsive-headline">Alphatec Refrigeration & Air Conditioning</h2>
-			  <hr />
-            <h3>Dealers in: commercial and domestic refrigeration, air conditioning power systems sales and services  </h3>
-            <hr />
-            <ul class="social">
-               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-               <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-               <li><a href="#"><i class="fa fa-skype"></i></a></li>
-            </ul>
-         </div>
-      </div>
-
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
-      </p>
-
-   </header> <!-- Header End -->
-
-
-   <!-- About Section
-   ================================================== -->
-   <section id="about">
-
-      <div class="row">
-
-         <div class="three columns">
-
-            <img class="profile-pic"  src="images/profilepic.jpg" alt="" />
-
-         </div>
-
-         <div class="nine columns main-col">
-
-            <h2>About Us</h2>
-			<p> ALPHATEC REFRIGERATION AND AIR CONDITIONING is East Africa’s fastest growing heating, ventilation and air conditioning company based in Nairobi.</p>
-<p>We specialize in all aspects of refrigeration and heating including supply and installation of air conditioning units, mechanical ventilation, With our friendly, courteous and professional staff, we aim to satisfy all the HVAC needs of our clients while delivering the most timely, cost effective and comprehensive same day service.</p>
-<p>Whether you need new air conditioning units installed in your premises,  repair problematic  A/C units or have your existing units regularly and properly serviced and maintained by knowledgeable technicians,  ALPHATEC AIRCONDITIONING LTD.  is here, ready to serve you.</p>
-            <p>Alphatec Refrigeration & Air Conditioning targets both commercial and domestic market. We know that quality service is
-never an incident, it is always a result of high intentions, sincere effort, intelligent directions and skillful execution. It represents a wise choice of many alternatives.
-Our aim is to ensure a satisfied clientele by ensuring that the customers get effective and professional services from our highly trained and qualified workforce hence maintaining a level
-of customer satisfaction rarely matched.</p>
-
-            <div class="row">
-
-               <div class="columns contact-details">
-
-                  <h2>Contact Details</h2>
-                  <p class="address">
-						   <span>Alphatec Refrigeration & Air Conditioning,</span><br>
-						   <span>P.o. Box 22828-00400<br>
-						        Nairobi, Kenya.
-                     </span><br>
-						   <span>+254715542053/0706625175</span><br>
-                     <span>simonxmburu@gmail.com</span>
-					   </p>
-
-               </div>
-
-             
-
-            </div> <!-- end row -->
-
-         </div> <!-- end .main-col -->
-
-      </div>
-
-   </section> <!-- About Section End-->
-
-
-   <!-- Resume Section
-   ================================================== -->
-   <section id="resume">
-
-      <!-- Company profile
-      ----------------------------------------------- -->
-      <div class="row education">
-
-         <div class="three columns header-col">
-            <h1><span>Company Profile</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Alphatec Refrigeration & Air Conditioning</h3>
-				   <p class="info">Background<span>&bull;</span></p>
-
-                  <p>
-                
-                  Alphatec Refrigeration & Air Conditioning was founded and registered under the business act (cap 499 section 14) with a vision of raising the bar of
-excellence and providing quality services in refrigeration and air conditioning field.
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-
-         </div> <!-- main-col end -->
-		 
-		 
-		
-
-      </div> <!-- End Education -->
-	   <div class="row education">
-
-         <div class="three columns header-col">
-            <h1><span></span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-             
-				   <p class="info">Our Mission<span>&bull;</span></p>
-
-                  <p>
-Alphatec Refrigeration & Air Conditioning aims to design, install, service, maintain cost effective, customized modern refrigeration and air conditioning
-services to all our clients at affordable prices.
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-
-         </div> <!-- main-col end -->
-		 
-		 
-		
-
-      </div> <!-- End Education -->
-	  
-	  <div class="row education">
-
-         <div class="three columns header-col">
-            <h1><span></span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-             
-				   <p class="info">Our Vision<span>&bull;</span></p>
-
-                  <p>
-
-The company’s long-term vision is to be more creative, understanding and more customers
-focused thus developing a long and healthy working relationship.
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-
-         </div> <!-- main-col end -->
-		 
-		 
-		
-
-      </div> <!-- End Education -->
-	   <div class="row education">
-
-         <div class="three columns header-col">
-            <h1><span></span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-             
-				   <p class="info">Our Goal<span>&bull;</span></p>
-
-                  <p>
-
-Alphatec Refrigeration & Air Conditioning targets to be an exceptional company giving our clients quality affordable services customized and tailored to
-suit their diverse needs.
-
-               </div>
-
-            </div> <!-- item end -->
-
-
-         </div> <!-- main-col end -->
-		 
-		 
-		
-
-      </div> 
-	  
-	    <div class="row education">
-
-         <div class="three columns header-col">
-            <h1><span></span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-             
-				   <p class="info">Operations<span>&bull;</span></p>
-				   
-				   <p>
-We are now operational  throughout east Africa region.This has been achieved by providing quality services to our esteemed clients and hence attracting demand for our services.
-Some of our clients include:Hotels,super markets,shopping malls,factories,telecommunication firms,domestic air conditioning clients and car air conditioning,offices and Airports.
-</p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-
-         </div> <!-- main-col end -->
-		 
-		 
-		
-
-      </div> 
-	  
-	   
-   <!-- Portfolio Section
-   ================================================== -->
-   <section id="portfolio">
-
-      <div class="row">
-
-         <div class="twelve columns collapsed">
-
-            <h1>Our Staffs at work at clients sites.</h1>
-
-            <!-- portfolio-wrapper -->
-            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-01" title="">
-                        <img alt="" src="images/portfolio/photo1.jpeg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					    
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-02" title="">
-                        <img alt="" src="images/portfolio/photo2.jpeg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					     
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-03" title="">
-                        <img alt="" src="images/portfolio/photo3.jpeg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					    
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-04" title="">
-                        <img alt="" src="images/portfolio/photo4.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					     
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-05" title="">
-                        <img alt="" src="images/portfolio/photo5.jpeg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-             
-			   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-06" title="">
-                        <img alt="" src="images/portfolio/photo7.jpeg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-              
-
-            </div> <!-- portfolio-wrapper end -->
-
-         </div> <!-- twelve columns end -->
-
-
-         
-
-
-      </div> <!-- row End -->
-
-   </section> <!-- Portfolio Section End-->
-
-
-  
-
-   <!-- Testimonials Section
-   ================================================== -->
-   <section id="testimonials">
-
-      <div class="text-container">
-
-         <div class="row">
-
-            <div class="two columns header-col">
-
-               <h1><span>Client Testimonials</span></h1>
-
-            </div>
-
-            <div class="ten columns flex-container">
-
-               <div class="flexslider">
-
-                  <ul class="slides">
-
-                     <li>
-                        <blockquote>
-                           <p>CABI INTERNATION LIMITED
-                           </p>
-                           <cite> Alphatec Refrigeration & Air Conditioning Supplied and repaired our Air conditioning units</cite>
-                        </blockquote>
-                     </li> <!-- slide ends -->
-
-
-<li>
-                        <blockquote>
-                           <p>NESTLE KENYA LIMITED
-                           </p>
-                           <cite> Alphatec Refrigeration & Air Conditioning Supplied and intsalled Office Air conditioning units in our company</cite>
-                        </blockquote>
-                     </li>
-					 
-					 
-<li>
-                        <blockquote>
-                           <p>AIRPORT TRADE CENTRE
-                           </p>
-                           <cite> Alphatec Refrigeration & Air Conditioning repaired our chiller</cite>
-                        </blockquote>
-                     </li>
-					 
-<li>
-                        <blockquote>
-                           <p>KGT SECURITY
-                           </p>
-                           <cite> Alphatec Refrigeration & Air Conditioning repaired our faulty water source units</cite>
-                        </blockquote>
-                     </li>
-					
-
-                  </ul>
-
-               </div> <!-- div.flexslider ends -->
-
-            </div> <!-- div.flex-container ends -->
-
-         </div> <!-- row ends -->
-
-       </div>  <!-- text-container ends -->
-
-   </section> <!-- Testimonials Section End-->
-
-
-   <!-- Contact Section
-   ================================================== -->
-   <section id="contact">
-
-         <div class="row section-head">
-
-            <div class="two columns header-col">
-
-               <h1><span>Get In Touch.</span></h1>
-
-            </div>
-
-            <div class="ten columns">
-
-                  <p class="lead">Do you have any queries about Refrigeration units and Air conditioning units? Contact Us.
-                  </p>
-
-            </div>
-
-         </div>
-
-         <div class="row">
-
-            <div class="eight columns">
-
-               <!-- form -->
-               <form action="" method="post" id="contactForm" name="contactForm">
-					<fieldset>
-
-                  <div>
-						   <label for="contactName">Name <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactName" name="contactName">
-                  </div>
-
-                  <div>
-						   <label for="contactEmail">Email <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
-                  </div>
-
-                  <div>
-						   <label for="contactSubject">Subject</label>
-						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
-                  </div>
-
-                  <div>
-                     <label for="contactMessage">Message <span class="required">*</span></label>
-                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
-                  </div>
-
-                  <div>
-                     <button class="submit">Submit</button>
-                     <span id="image-loader">
-                        <img alt="" src="images/loader.gif">
-                     </span>
-                  </div>
-
-					</fieldset>
-				   </form> <!-- Form End -->
-
-               <!-- contact-warning -->
-               <div id="message-warning"> Error body</div>
-               <!-- contact-success -->
-				   <div id="message-success">
-                  <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-				   </div>
-
-            </div>
-
-
-            <aside class="four columns footer-widgets">
-
-               <div class="widget widget_contact">
-
-					   <h4>Address and Phone</h4>
-					   <p class="address">
-						   Alphatec Refrigeration & Air Conditioning<br>
-						   P.o. Box 22828-00400 <br>
-						   Nairobi, Kenya.<br>
-						 <span>+254715542053/0706625175</span><br>
-                     <span>simonxmburu@gmail.com</span
-					   </p>
-
-				   </div>
-
-
-            </aside>
-
-      </div>
-
-   </section> <!-- Contact Section End-->
-
-
-   <!-- footer
-   ================================================== -->
-   <footer>
-
-      <div class="row">
-
-         <div class="twelve columns">
-
-            <ul class="social-links">
-               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-               <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-               <li><a href="#"><i class="fa fa-skype"></i></a></li>
-            </ul>
-
-            <ul class="copyright">
-               <li>Alphatec Refrigeration & Air Conditioning &copy; Copyright 2022</li>
-               <li>Developed by <a href="https://www.linkedin.com/in/james-chira-6b4b0911a/" title="Styleshout" target="_blank">James Chira designs</a></li>   
-            </ul>
-
-         </div>
-
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-
-      </div>
-
-   </footer> <!-- Footer End-->
-
-   <!-- Java Script
-   ================================================== -->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-
-   <script src="js/jquery.flexslider.js"></script>
-   <script src="js/waypoints.js"></script>
-   <script src="js/jquery.fittext.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/init.js"></script>
-
+<!-- Navbar -->
+<nav id="nav-wrap">
+  <ul id="nav">
+    <li class="current"><a href="#home">Home</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#resume">Company Profile</a></li>
+    <li><a href="#portfolio">Testimonials</a></li>
+    <li><a href="#testimonials">Our Clients</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<header id="home">
+  <div data-aos="zoom-in" data-aos-duration="1000">
+    <h2>Alphatec Refrigeration & Air Conditioning</h2>
+    <h3>Dealers in: commercial and domestic refrigeration, air conditioning power systems sales and services</h3>
+    <ul class="social">
+      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fab fa-skype"></i></a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- About -->
+<section id="about" data-aos="fade-up">
+  <h2>About Us</h2>
+  <p>ALPHATEC REFRIGERATION AND AIR CONDITIONING is East Africa’s fastest growing heating, ventilation and air conditioning company based in Nairobi.</p>
+  <p>We specialize in all aspects of refrigeration and heating including supply and installation of air conditioning units...</p>
+</section>
+
+<!-- Portfolio -->
+<section id="portfolio" data-aos="fade-up">
+  <h2>Our Staffs at work at clients sites</h2>
+  <div id="portfolio-wrapper">
+    <div class="portfolio-item"><img src="images/portfolio/photo1.jpeg" alt=""></div>
+    <div class="portfolio-item"><img src="images/portfolio/photo2.jpeg" alt=""></div>
+    <div class="portfolio-item"><img src="images/portfolio/photo3.jpeg" alt=""></div>
+    <div class="portfolio-item"><img src="images/portfolio/photo4.jpg" alt=""></div>
+    <div class="portfolio-item"><img src="images/portfolio/photo5.jpeg" alt=""></div>
+    <div class="portfolio-item"><img src="images/portfolio/photo7.jpeg" alt=""></div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" data-aos="fade-up">
+  <h2>Client Testimonials</h2>
+  <blockquote>
+    <p>CABI INTERNATION LIMITED</p>
+    <cite>Supplied and repaired our Air conditioning units</cite>
+  </blockquote>
+</section>
+
+<!-- Contact -->
+<section id="contact" data-aos="fade-up">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Name *" required>
+    <input type="email" placeholder="Email *" required>
+    <input type="text" placeholder="Subject">
+    <textarea placeholder="Message *" rows="5" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>Alphatec Refrigeration & Air Conditioning &copy; 2022 | Developed by <a href="https://www.linkedin.com/in/james-chira-6b4b0911a/" target="_blank">James Chira Designs</a></p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
 </body>
-
 </html>
